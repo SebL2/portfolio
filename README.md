@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sebastian Liu — Portfolio
 
-## Getting Started
+A personal portfolio built with **Next.js 16** (App Router) and **Aceternity UI** style
+components, showcasing my projects.
 
-First, run the development server:
+## Featured projects
+
+- **[Spotify Playlist Generator](https://github.com/jw7914/Spotify-Playlist-Generator)** —
+  A full-stack AI "DJ" that pairs the Spotify API with Google Gemini to turn a plain-English
+  mood into a playlist saved straight to your account. ([Live demo](https://spotifyplaylistgen.vercel.app/))
+- **[Emotional Recognition](https://github.com/SebL2/Emotional_Recognition_Application)** —
+  A from-scratch PyTorch CNN trained on FER2013 that classifies facial emotions from a live
+  webcam feed in real time using OpenCV.
+
+## Tech stack
+
+- [Next.js 16](https://nextjs.org) (App Router, Turbopack) + React 19
+- [Tailwind CSS v4](https://tailwindcss.com)
+- [Aceternity UI](https://ui.aceternity.com) components (Spotlight, Text Generate, Moving
+  Border, Bento Grid, Infinite Moving Cards, Meteors) built on [Motion](https://motion.dev)
+- [`@tabler/icons-react`](https://tabler.io/icons)
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Other scripts:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build    # production build
+npm run start    # serve the production build
+npm run lint     # ESLint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Structure
 
-## Learn More
+```
+src/
+├── app/                  # layout, page, global styles + theme/animations
+├── components/
+│   ├── sections/         # navbar, hero, projects, tech-stack, about, contact
+│   └── ui/               # Aceternity-style primitives
+└── lib/utils.ts          # cn() class-merge helper
+```
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Edit your details in `src/components/sections/` (links, copy) and the project data array in
+`src/components/sections/projects.tsx`.
