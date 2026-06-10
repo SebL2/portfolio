@@ -4,8 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { useScroll, useSpring, useMotionValueEvent } from "motion/react";
 
 const FRAME_COUNT = 150;
+// next/config's basePath doesn't rewrite raw string URLs like these, so prefix it
+// ourselves. Matches `basePath` in next.config.ts; empty in local dev.
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const frameSrc = (i: number) =>
-  `/climb/frame_${String(i).padStart(4, "0")}.jpg`;
+  `${BASE_PATH}/climb/frame_${String(i).padStart(4, "0")}.jpg`;
 
 /**
  * First-person bouldering footage scrubbed by scroll: the page's scroll

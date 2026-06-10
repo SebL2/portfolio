@@ -28,6 +28,9 @@ jobs:
       - uses: actions/configure-pages@v5
       - run: npm ci
       - run: npm run build
+        env:
+          # Project site lives under /<repo>; build assets/routes for that subpath.
+          NEXT_PUBLIC_BASE_PATH: /portfolio
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out
